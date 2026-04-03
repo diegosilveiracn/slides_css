@@ -10,9 +10,9 @@
 \setbeamertemplate{navigation symbols}{}
 
 \lstset{
-language=CSS,
+language=html,
 upquote=true,
-basicstyle=\ttfamily\tiny,
+basicstyle=\ttfamily,
 backgroundcolor=\color{white},
 keywordstyle=\color{blue}\bfseries,
 stringstyle=\color{red},
@@ -20,7 +20,7 @@ commentstyle=\color{green},
 %morecomment=[s][\color{green}]{/**}{*/},
 showspaces=false,
 showstringspaces=false,
-morekeywords={None,self,__init__,True,False},
+morekeywords={},
 literate=
 {á}{{\'a}}1
 {Á}{{\'A}}1
@@ -111,46 +111,115 @@ diego.nascimento@ifrn.edu.br
 \section{Introdução}
 
 \begin{frame}
-	\frametitle{HTML}
+	\frametitle{CSS}
 	
 	\begin{itemize}
-		\item É que uma linguagem de marcação fundamental para criar páginas web;
-		\item É um acrônimo para \underline{H}yperText \underline{M}arkup \underline{L}anguage;
-		\item Não é uma linguagem de programação; e
-		\item Foi criado 1991 pelo cientista Tim Berners-Lee.
+		\item Um acrônimo para \underline{C}ascading \underline{S}tyle \underline{S}heets;
+		\item Proposto por Håkon Wium Lie e alançado oficialmente em 1996;
+		\item É usada para definir a aparência visual de documentos HTML;
+		\item Controla layout, cores, fontes e espaçamentos, separando o conteúdo da estrutura HTML da sua apresentação; e
+		\item Permite criar sites responsivos, organizados e consistentes.
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Como funciona?}
-
-\begin{itemize}
-	\item Utiliza tags para envolver e definir o tipo de conteúdo;
-	\item As tags são palavras-chave, geralmente dentro de sinais de menor e maior: \structure{< >}; e
-	\item Pode ser escrito em qualquer editor de texto, e salvo no formato \structure{.html}.
-\end{itemize}\vfill
-
-\begin{exampleblock}{Exemplos}
+	\frametitle{Regra de estilo}
+	
+	\begin{block}{Estrutura}
+		\begin{lstlisting}
+seletor {
+	propriedade: valor;
+}
+		\end{lstlisting}
+	\end{block}\vfill
+	
+	\begin{itemize}
+		\item O \structure{seletor} define o alvo da regra de estilo;
+		\item A \structure{propriedade} define o que será utilizado; e
+		\item O \structure{valor} define como será utilizado.
+	\end{itemize} \vfill
+	
+	\begin{exampleblock}{Exemplo}
 	\begin{lstlisting}
-<!DOCTYPE html>
-
-<html></html>
-
-<meta>
-
-<body></body>
-
-<img>
+p {
+   color: blue;
+}
 	\end{lstlisting}
 \end{exampleblock}
 \end{frame}
 
+\section{Folha de estilo}
+
+\begin{frame}
+\frametitle{Folha de estilo}
+
+\begin{itemize}
+	\item Conjunto de regras de estilo aplicado a um site;
+	\item Existem três formas de declarar:
+	\begin{enumerate}
+		\item Inline;
+		\item Embedded; ou
+		\item Linked.
+	\end{enumerate} 
+\end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]
-	\frametitle{Primeira página}
-		
+	\frametitle{Inline}
+	
+	\begin{itemize}
+		\item As regras de estilo são declaradas diretamente nas tags; e
+		\item Utiliza o atributo \structure{style} para definir o estilo desejado.
+	\end{itemize}\vfill
+	
 	\begin{exampleblock}{Exemplo}
 		\begin{lstlisting}
+<body style="background-color=yellow">
 
+</body>
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Embedded}
+	
+	\begin{itemize}
+		\item A tag \structure{<style>} é usada para declarar a folha de estilo; e
+		\item Deve estar ao final da tag \structure{<head>}.
+	\end{itemize}\vfill
+	
+	\begin{exampleblock}{Exemplo}
+		\begin{lstlisting}
+<head>
+   ...
+   <style>
+      body { background-color: yellow; }
+      p { 
+      	  color: blue; 
+          font-size: 15pt; 
+         }
+   </style>
+</head>
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Linked}
+	
+	\begin{itemize}
+		\item Dever ser criado um arquivo com extensão \structure{.css};
+		\item Dentro do arquivo criado são definidas as regras de estilo; e
+		\item O arquivo de estilo é importando no documento HTML usando a tag \structure{<link>}, que deve estar dentro da tag \structure{<head>}.
+	\end{itemize}\vfill
+	
+	\begin{exampleblock}{Exemplo}
+		\begin{lstlisting}
+<head>
+   <link rel="stylesheet" type="text/css" href="estilo.css" 
+    media="all">
+</head>
 		\end{lstlisting}
 	\end{exampleblock}
 \end{frame}
