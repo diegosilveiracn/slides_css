@@ -103,7 +103,7 @@ diego.nascimento@ifrn.edu.br
 
 \AtBeginSection[]{
 	\begin{frame}
-		\frametitle{Ementa do Curso}
+		\frametitle{Ementa}
 		\tableofcontents[currentsection]
 	\end{frame}
 }
@@ -158,8 +158,8 @@ p {
 	\item Existem três formas de declarar:
 	\begin{enumerate}
 		\item Inline;
-		\item Embedded; ou
-		\item Linked.
+		\item Incorporado; e
+		\item Externo.
 	\end{enumerate} 
 \end{itemize}
 \end{frame}
@@ -182,7 +182,7 @@ p {
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Embedded}
+	\frametitle{Incorporado}
 	
 	\begin{itemize}
 		\item A tag \structure{<style>} é usada para declarar a folha de estilo; e
@@ -206,7 +206,7 @@ p {
 \end{frame}
 
 \begin{frame}[fragile]
-	\frametitle{Linked}
+	\frametitle{Externo}
 	
 	\begin{itemize}
 		\item Dever ser criado um arquivo com extensão \structure{.css};
@@ -220,6 +220,112 @@ p {
    <link rel="stylesheet" type="text/css" href="estilo.css" 
     media="all">
 </head>
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\section{Seletores}
+
+\begin{frame}
+	\frametitle{Tipos de seletores}
+	
+	\begin{itemize}
+		\item Classe;
+		\item ID;
+		\item Universal;
+		\item Atributo; e
+		\item Pseudoclasse.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Seletor de classe}
+	
+	\begin{itemize}
+		\item Seleciona elementos com um atributo class específico, definido com um ponto \structure{.} ; e
+		\item Pode ser utilizado em um ou mais elementos.
+	\end{itemize}\vfill
+	
+	\begin{exampleblock}{Exemplo}
+		\begin{lstlisting}
+.caixa{
+   border: 1px solid green;
+   background-color: yellow;
+   color: green;
+}
+
+<p class="caixa"></p>			
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Seletor ID}
+	
+	\begin{itemize}
+		\item Seleciona um único elemento com um atributo id único, definido com hashtag \structure{\#} ; e
+		\item \alert{Não pode ser usado em outro elemento}.
+	\end{itemize}\vfill
+	
+	\begin{exampleblock}{Exemplo}
+		\begin{lstlisting}
+#cabecalho{
+   border: 1px dashed blue;
+   background-color: gray;
+   color: blue;
+}
+
+<h1 id="cabecalho"></h1>			
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Seletor universal}
+	
+	\begin{itemize}
+		\item Utiliza o asterisco \structure{*} para aplicar estilos a todos os elementos da página.
+	\end{itemize}\vfill
+	
+	\begin{exampleblock}{Exemplo}
+		\begin{lstlisting}
+*{
+   box-sizing: border-box;
+}			
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Seletor de atributo}
+	
+	\begin{itemize}
+		\item Seleciona os elementos com base em seus atributos ou valores.
+	\end{itemize}\vfill
+	
+	\begin{exampleblock}{Exemplo}
+		\begin{lstlisting}
+input[type="text"]{
+   background-color: blue;
+   color: white;
+}			
+		\end{lstlisting}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Seletor de pseudoclasse}
+	
+	\begin{itemize}
+		\item Selecionam elementos com base no seu estado, utilizando dois pontos \structure{:} .
+	\end{itemize}\vfill
+	
+	\begin{exampleblock}{Exemplo}
+		\begin{lstlisting}
+a:hover{
+   background-color: blue;
+   color: white;
+}			
 		\end{lstlisting}
 	\end{exampleblock}
 \end{frame}
