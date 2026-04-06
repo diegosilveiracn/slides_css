@@ -242,16 +242,16 @@ p {
 	\frametitle{Seletor de classe}
 	
 	\begin{itemize}
-		\item Seleciona elementos com um atributo class específico, definido com um ponto \structure{.} ; e
+		\item Seleciona elementos com um atributo \structure{class} específico, definido com um ponto \structure{.} ; e
 		\item Pode ser utilizado em um ou mais elementos.
 	\end{itemize}\vfill
 	
 	\begin{exampleblock}{Exemplo}
 		\begin{lstlisting}
 .caixa{
-   border: 1px solid green;
-   background-color: yellow;
-   color: green;
+   border-width: 2px;
+   border-style: solid;
+   border-color: green;
 }
 
 <p class="caixa"></p>			
@@ -263,16 +263,16 @@ p {
 	\frametitle{Seletor ID}
 	
 	\begin{itemize}
-		\item Seleciona um único elemento com um atributo id único, definido com hashtag \structure{\#} ; e
+		\item Seleciona um único elemento com um atributo \structure{id} único, definido com hashtag \structure{\#} ; e
 		\item \alert{Não pode ser usado em outro elemento}.
 	\end{itemize}\vfill
 	
 	\begin{exampleblock}{Exemplo}
 		\begin{lstlisting}
 #cabecalho{
-   border: 1px dashed blue;
-   background-color: gray;
-   color: blue;
+   border-width: 2px;
+   border-style: dashed;
+   border-color: blue;
 }
 
 <h1 id="cabecalho"></h1>			
@@ -290,7 +290,7 @@ p {
 	\begin{exampleblock}{Exemplo}
 		\begin{lstlisting}
 *{
-   box-sizing: border-box;
+   border: solid;
 }			
 		\end{lstlisting}
 	\end{exampleblock}
@@ -306,8 +306,8 @@ p {
 	\begin{exampleblock}{Exemplo}
 		\begin{lstlisting}
 input[type="text"]{
-   background-color: blue;
    color: white;
+   background-color: blue;
 }			
 		\end{lstlisting}
 	\end{exampleblock}
@@ -323,8 +323,8 @@ input[type="text"]{
 	\begin{exampleblock}{Exemplo}
 		\begin{lstlisting}
 a:hover{
-   background-color: blue;
    color: white;
+   background-color: blue;
 }			
 		\end{lstlisting}
 	\end{exampleblock}
@@ -347,11 +347,33 @@ a:hover{
 	\end{itemize}	
 \end{frame}
 
-\begin{frame}[fragile]
+\begin{frame}
+	
 	\frametitle{Visualização da caixa}
 	\begin{center}
 		\includegraphics[scale=0.8]{img/caixa}	
 	\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+	\frametitle{Aplicando modelo de caixa}
+	
+	\begin{exampleblock}{Exemplo}
+	\begin{lstlisting}
+.topo{
+   height: 150px;
+   size: 100%;
+   border: 1px solid;
+   margin-bottom: 10px;
+}
+.conteudo{
+   height: 450px;
+   size: 100%;
+   border: 1px solid;
+}
+<div class="topo"></div><div class="conteudo"></div>
+	\end{lstlisting}
+\end{exampleblock}
 \end{frame}
 
 \end{document}
