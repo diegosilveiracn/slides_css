@@ -185,20 +185,17 @@ p{
 	
 	\begin{itemize}
 		\item A tag \structure{<style>} é usada para declarar a folha de estilo; e
-		\item Deve estar ao final da tag \structure{<head>}.
+		\item \alert{Deve estar ao final da tag} \structure{<head>}.
 	\end{itemize}\vfill
 	
 	\begin{exampleblock}{Exemplo}
 		\begin{lstlisting}
-<head>
-
-   <style>
-      p { 
-      	  color: blue; 
-          font-size: 15pt; 
-         }
-   </style>
-</head>
+<style>
+  p{
+      color: blue; 
+      background-color: gray; 
+     }
+</style>
 		\end{lstlisting}
 	\end{exampleblock}
 \end{frame}
